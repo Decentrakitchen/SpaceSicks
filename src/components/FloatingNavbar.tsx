@@ -40,8 +40,6 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
             : 'bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl'
         } ${className}`}
       >
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 h-[1px] bottom-0 bg-gradient-to-r from-purple-500/40 to-blue-500/40 blur-sm rounded-full -z-10"></div>
         
         <div className="px-6">
           <div className="flex items-center gap-8 h-14">
