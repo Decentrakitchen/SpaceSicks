@@ -21,15 +21,15 @@ const DataPoint: React.FC<DataPointProps> = ({ number, label, icon }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="data-point group"
+      className="group"
     >
       <div className="flex justify-center mb-4 text-blue-400">
         {icon}
       </div>
-      <div className="data-number group-hover:text-blue-300 transition-colors duration-300 text-white text-2xl font-bold">
+      <div className="group-hover:text-blue-300 transition-colors duration-300 text-white text-2xl font-bold">
         {number}
       </div>
-      <div className="data-label group-hover:text-gray-200 transition-colors duration-300 text-gray-300 text-sm">
+      <div className="group-hover:text-gray-200 transition-colors duration-300 text-gray-300 text-sm">
         {label}
       </div>
     </motion.div>
