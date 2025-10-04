@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Telescope, Zap, Database, Target } from 'lucide-react';
+import { Binoculars, Zap, Database, Target } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -100,7 +100,7 @@ const TelescopePage: React.FC = () => {
           <DataPoint
             number="Kepler"
             label="Telescope Data"
-            icon={<Telescope className="w-8 h-8" />}
+            icon={<Binoculars className="w-8 h-8" />}
           />
           <DataPoint
             number="TESS"

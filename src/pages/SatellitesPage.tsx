@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Satellite, Globe, Database, Target } from 'lucide-react';
+import { Radio, Globe, Database, Target } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -101,7 +101,7 @@ const SatellitesPage: React.FC = () => {
           <DataPoint
             number="JWST"
             label="Space Telescope"
-            icon={<Satellite className="w-8 h-8" />}
+            icon={<Radio className="w-8 h-8" />}
           />
           <DataPoint
             number="CHEOPS"
