@@ -6,7 +6,6 @@ import ScrollAnimations from './components/ScrollAnimations';
 import HomePage from './pages/HomePage';
 import TelescopePage from './pages/TelescopePage';
 import SatellitesPage from './pages/SatellitesPage';
-import AboutPage from './pages/AboutPage';
 import ChallengePage from './pages/ChallengePage';
 import './App.css';
 
@@ -21,7 +20,6 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/telescope" element={<TelescopePage />} />
           <Route path="/satellites" element={<SatellitesPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/challenge" element={<ChallengePage />} />
         </Routes>
       </div>

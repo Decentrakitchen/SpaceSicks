@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Rocket, Zap, Globe, Users } from 'lucide-react';
+import { Menu, X, Rocket, Zap, Globe } from 'lucide-react';
 
 interface FloatingNavbarProps {
   className?: string;
@@ -25,7 +25,6 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
   const navItems = [
     { name: 'Telescope', path: '/telescope', icon: <Zap className="w-4 h-4" />, color: 'from-blue-400 to-cyan-400' },
     { name: 'Satellites', path: '/satellites', icon: <Globe className="w-4 h-4" />, color: 'from-purple-400 to-pink-400' },
-    { name: 'About', path: '/about', icon: <Users className="w-4 h-4" />, color: 'from-green-400 to-emerald-400' },
     { name: 'Challenge', path: '/challenge', icon: <Rocket className="w-4 h-4" />, color: 'from-yellow-400 to-orange-400' },
   ];
 
