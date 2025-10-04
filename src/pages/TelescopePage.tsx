@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Binoculars, Zap, Database, Target, Search, Star, Activity, TrendingUp } from 'lucide-react';
+import { Microscope, Zap, Database, Target, Search, Star, Activity, BarChart3 } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -203,7 +203,7 @@ const TelescopePage: React.FC = () => {
             <DataPoint
               number="24/7"
               label="Monitoring"
-              icon={<TrendingUp className="w-8 h-8" />}
+              icon={<BarChart3 className="w-8 h-8" />}
               description="Continuous analysis"
             />
           </motion.div>
@@ -275,7 +275,7 @@ const TelescopePage: React.FC = () => {
               </div>
               <div className="flex items-center justify-center">
                 <div className="w-64 h-64 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center">
-                  <Binoculars className="w-32 h-32 text-purple-400" />
+                  <Microscope className="w-32 h-32 text-purple-400" />
                 </div>
               </div>
             </div>
