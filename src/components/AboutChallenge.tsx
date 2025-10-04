@@ -57,7 +57,7 @@ const AboutChallenge: React.FC = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-4xl md:text-6xl lg:text-7xl font-black leading-none mb-8 text-white"
         >
-          THE COSMIC
+          ABOUT THE
           <br />
           <span className="text-nebula-400">CHALLENGE</span>
         </motion.h2>
@@ -76,20 +76,19 @@ const AboutChallenge: React.FC = () => {
           className="section-content"
         >
           <p className="text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            NASA's treasure trove of <span className="text-nebula-400 font-semibold">exoplanet datasets</span> 
-            contains millions of signals waiting to be decoded. Traditional analysis methods 
-            can only process a fraction of this cosmic data stream.
+            Data from several different <span className="text-nebula-400 font-semibold">space-based exoplanet surveying missions</span> 
+            have enabled discovery of thousands of new planets outside our solar system, but most of these exoplanets were identified manually.
           </p>
           <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Our <span className="text-cosmic-400 font-semibold">quantum-enhanced algorithms</span> analyze 
-            light curves, atmospheric signatures, and orbital mechanics to automatically 
-            identify new worlds. We're not just finding planets—we're 
-            <span className="text-nebula-400 font-semibold"> mapping the architecture of distant solar systems</span> 
-            and predicting their evolutionary pathways.
+            With advances in <span className="text-cosmic-400 font-semibold">artificial intelligence and machine learning (AI/ML)</span>, 
+            it is possible to automatically analyze large sets of data collected by these missions to identify exoplanets.
           </p>
           <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Every discovery brings us closer to answering humanity's most profound question: 
-            <span className="text-cosmic-400 font-medium"> Are we alone in the universe?</span>
+            Your challenge is to create an <span className="text-nebula-400 font-semibold">AI/ML model</span> that is trained on one or more 
+            of the open-source exoplanet datasets offered by NASA and that can analyze new data to accurately identify exoplanets.
+          </p>
+          <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
+            <span className="text-cosmic-400 font-medium">(Astrophysics Division)</span>
           </p>
         </motion.div>
         
@@ -100,23 +99,23 @@ const AboutChallenge: React.FC = () => {
           className="data-grid grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16 max-w-6xl mx-auto"
         >
           <DataPoint
-            number="2M+"
-            label="Data Points"
+            number="5000+"
+            label="Exoplanets Found"
             icon={<Database className="w-8 h-8" />}
           />
           <DataPoint
-            number="10TB"
-            label="Daily Processing"
+            number="AI/ML"
+            label="Detection Method"
             icon={<Cpu className="w-8 h-8" />}
           />
           <DataPoint
-            number="0.001s"
-            label="Detection Time"
+            number="NASA"
+            label="Data Source"
             icon={<Clock className="w-8 h-8" />}
           />
           <DataPoint
             number="∞"
-            label="Potential"
+            label="Possibilities"
             icon={<Zap className="w-8 h-8" />}
           />
         </motion.div>
@@ -127,7 +126,7 @@ const AboutChallenge: React.FC = () => {
           transition={{ duration: 1, delay: 1.2 }}
           className="text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-semibold leading-relaxed max-w-4xl mx-auto mt-12"
         >
-          <strong>Join us in building the next generation of cosmic discovery.</strong>
+          <strong>Join us in building the next generation of exoplanet discovery.</strong>
         </motion.p>
       </motion.div>
     </section>
