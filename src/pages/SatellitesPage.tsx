@@ -23,13 +23,13 @@ const DataPoint: React.FC<DataPointProps> = ({ number, label, icon }) => {
       transition={{ duration: 0.8, delay: 0.2 }}
       className="data-point group"
     >
-      <div className="flex justify-center mb-4 text-cosmic-400">
+      <div className="flex justify-center mb-4 text-blue-400">
         {icon}
       </div>
-      <div className="data-number group-hover:text-cosmic-300 transition-colors duration-300">
+      <div className="data-number group-hover:text-blue-300 transition-colors duration-300 text-white text-2xl font-bold">
         {number}
       </div>
-      <div className="data-label group-hover:text-cosmic-200 transition-colors duration-300">
+      <div className="data-label group-hover:text-gray-200 transition-colors duration-300 text-gray-300 text-sm">
         {label}
       </div>
     </motion.div>
@@ -59,14 +59,14 @@ const SatellitesPage: React.FC = () => {
         >
           SATELLITE
           <br />
-          <span className="text-nebula-400">ANALYSIS</span>
+          <span className="text-purple-400">ANALYSIS</span>
         </motion.h1>
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-full h-0.5 bg-gradient-to-r from-transparent via-nebula-500 to-transparent mb-8"
+          className="w-full h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent mb-8"
         />
         
         <motion.div
@@ -75,18 +75,18 @@ const SatellitesPage: React.FC = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="section-content"
         >
-          <p className="text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Our <span className="text-nebula-400 font-semibold">satellite-based exoplanet detection</span> 
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-200 font-light leading-relaxed max-w-4xl mx-auto mb-8">
+            Our <span className="text-purple-400 font-semibold">satellite-based exoplanet detection</span> 
             leverages data from space missions like JWST, CHEOPS, and future missions to identify 
             exoplanets through advanced spectroscopic analysis.
           </p>
-          <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Using <span className="text-cosmic-400 font-semibold">deep learning models</span>, 
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
+            Using <span className="text-blue-400 font-semibold">deep learning models</span>, 
             we process atmospheric data, temperature variations, and orbital mechanics 
             from satellite observations to detect planetary signatures.
           </p>
-          <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Our AI systems can analyze <span className="text-nebula-400 font-semibold">multi-wavelength data</span> 
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
+            Our AI systems can analyze <span className="text-purple-400 font-semibold">multi-wavelength data</span> 
             from different satellite instruments, providing comprehensive planetary characterization 
             and habitability assessment.
           </p>
@@ -129,7 +129,7 @@ const SatellitesPage: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-nebula-500 to-cosmic-500 text-white text-lg font-semibold rounded-full hover:from-nebula-400 hover:to-cosmic-400 transition-all duration-300"
+            className="px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-lg font-semibold rounded-full hover:from-purple-400 hover:to-blue-400 transition-all duration-300"
           >
             Explore Satellite Data
           </motion.button>
