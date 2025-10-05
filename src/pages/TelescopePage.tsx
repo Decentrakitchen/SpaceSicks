@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Zap, Database, Target, Search, Star, BarChart3 } from 'lucide-react';
+import { Brain, Zap, Database, Target, Search, Star, BarChart3, ExternalLink } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -174,26 +174,55 @@ const TelescopePage: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Hugging Face Space Embed */}
+          {/* Hugging Face Space Link */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-16 max-w-7xl mx-auto"
+            className="mt-16 max-w-5xl mx-auto"
           >
-            <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-6 overflow-hidden">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                Try Our AI Model
-              </h3>
-              <div className="flex justify-center">
-                <iframe
-                  src="https://huggingface.co/spaces/Adilbai/Kepler-automated-detection?embed=true"
-                  width="100%"
-                  height="600"
-                  style={{ border: "none", borderRadius: "12px" }}
-                  allow="camera; microphone"
-                  title="Kepler Automated Detection"
-                ></iframe>
+            <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-10">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Try Our AI Model
+                </h3>
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                  Experience our Kepler exoplanet detection model live on Hugging Face. 
+                  Upload telescope data and get instant predictions.
+                </p>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-6">
+                <motion.a
+                  href="https://huggingface.co/spaces/Adilbai/Kepler-automated-detection"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(139, 92, 246, 0.5)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-12 py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-2xl font-bold rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 flex items-center justify-center"
+                >
+                  <ExternalLink className="w-7 h-7 mr-3" />
+                  Open Model on Hugging Face
+                </motion.a>
+                
+                <p className="text-gray-400 text-sm">
+                  Opens in a new tab • Powered by Hugging Face
+                </p>
+              </div>
+
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+                  <div className="text-purple-400 text-2xl font-bold mb-2">Real-time</div>
+                  <div className="text-gray-300 text-sm">Instant predictions</div>
+                </div>
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+                  <div className="text-blue-400 text-2xl font-bold mb-2">Interactive</div>
+                  <div className="text-gray-300 text-sm">Upload your data</div>
+                </div>
+                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+                  <div className="text-green-400 text-2xl font-bold mb-2">Accurate</div>
+                  <div className="text-gray-300 text-sm">92% accuracy rate</div>
+                </div>
               </div>
             </div>
           </motion.div>
