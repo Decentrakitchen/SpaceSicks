@@ -123,13 +123,43 @@ const TelescopePage: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="w-full py-16 bg-black/30 backdrop-blur-md border-t border-b border-white/10"
+        className="relative w-full py-16 bg-black border-t border-b border-purple-500/20 overflow-hidden"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%)
+          `
+        }}
       >
+        {/* Animated stars background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.7 + 0.3
+              }}
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [1, 1.5, 1]
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                delay: Math.random() * 2
+              }}
+            />
+          ))}
+        </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-10 px-4"
+          className="relative z-10 mb-10 px-4"
         >
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
@@ -140,7 +170,7 @@ const TelescopePage: React.FC = () => {
             Experience our <span className="text-purple-400 font-semibold">Kepler exoplanet detection</span> model live
           </p>
         </motion.div>
-        <div className="w-full px-4 md:px-8 lg:px-16">
+        <div className="relative z-10 w-full px-4 md:px-8 lg:px-16">
           <div className="w-full h-[85vh] max-w-[1800px] mx-auto">
             <iframe
               src="https://adilbai-kepler-automated-detection.hf.space"
