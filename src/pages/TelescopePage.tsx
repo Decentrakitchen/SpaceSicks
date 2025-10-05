@@ -86,7 +86,7 @@ const TelescopePage: React.FC = () => {
             className="text-xl md:text-2xl lg:text-3xl text-gray-200 font-light leading-relaxed max-w-4xl mx-auto mb-12"
           >
             Our <span className="text-purple-400 font-semibold">advanced AI model</span>
-            powered by Hugging Face processes astronomical data to identify exoplanets
+            powered by Hugging Face processes telescope data to identify exoplanets
             through machine learning and deep neural networks.
           </motion.p>
 
@@ -94,7 +94,7 @@ const TelescopePage: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.8 }}
-            className="data-grid grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-16 max-w-5xl mx-auto"
+            className="data-grid grid grid-cols-3 gap-6 md:gap-8 mt-16 max-w-6xl mx-auto"
           >
             <DataPoint
               number="5000+"
@@ -153,32 +153,11 @@ const TelescopePage: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Search className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Real-time Data Processing</span>
+                    <span className="text-gray-300">Real-time telescope data processing</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Model Performance</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400">99.7%</div>
-                    <div className="text-gray-400 text-sm">Accuracy</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400">0.3s</div>
-                    <div className="text-gray-400 text-sm">Inference Time</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400">5000+</div>
-                    <div className="text-gray-400 text-sm">Training Samples</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400">24/7</div>
-                    <div className="text-gray-400 text-sm">Availability</div>
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
