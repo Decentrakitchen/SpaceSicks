@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Rocket, Zap, Globe } from 'lucide-react';
+import { Menu, X, Zap, Globe } from 'lucide-react';
 
 interface FloatingNavbarProps {
   className?: string;
@@ -10,7 +10,6 @@ interface FloatingNavbarProps {
 const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,7 +24,6 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
   const navItems = [
     { name: 'Telescope', path: '/telescope', icon: <Zap className="w-4 h-4" />, color: 'from-blue-400 to-cyan-400' },
     { name: 'Satellites', path: '/satellites', icon: <Globe className="w-4 h-4" />, color: 'from-purple-400 to-pink-400' },
-    { name: 'Challenge', path: '/challenge', icon: <Rocket className="w-4 h-4" />, color: 'from-yellow-400 to-orange-400' },
   ];
 
   return (
@@ -34,72 +32,37 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`transition-all duration-700 ${
+        className={`transition-all duration-500 ${
           isScrolled 
-            ? 'bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl' 
-            : 'bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl'
+            ? 'bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-blue-500/10' 
+            : 'bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg shadow-blue-500/5'
         } ${className}`}
       >
         
         <div className="px-6">
           <div className="flex items-center gap-8 h-14">
-          {/* Logo with enhanced effects */}
+          {/* Logo - Simple Text Only */}
           <Link to="/">
-            <motion.div
-              whileHover={{ opacity: 0.8 }}
-              className="flex items-center space-x-3"
-            >
-              <div className="w-9 h-9 rounded-full flex items-center justify-center border border-white/20">
-                <Rocket className="w-5 h-5 text-white" />
-              </div>
-              <div className="text-white">
-                <h1 className="text-lg font-semibold text-white leading-none tracking-tight">
-                  SpaceSicks
-                </h1>
-              </div>
-            </motion.div>
+            <h1 className="text-lg font-bold text-white ">
+              SpaceSicks
+            </h1>
           </Link>
 
-          {/* Desktop Navigation with enhanced effects */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                onHoverStart={() => setHoveredItem(item.name)}
-                onHoverEnd={() => setHoveredItem(null)}
-                className="relative"
-              >
+            {navItems.map((item) => (
+              <div key={item.name}>
                 <Link to={item.path}>
-                  <motion.div
-                    whileHover={{ y: -2 }}
-                    className={`relative text-white/70 hover:text-white transition-colors duration-200 px-3 py-2 text-sm font-medium tracking-wide ${
+                  <div
+                    className={`text-white/70 hover:text-white transition-colors duration-200 px-3 py-2 text-sm font-medium tracking-wide ${
                       location.pathname === item.path ? 'text-white' : ''
                     }`}
                   >
                     {item.name}
-                    {hoveredItem === item.name && (
-                      <motion.div
-                        layoutId="navbar-indicator"
-                        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-indigo-400/60 to-blue-400/60"
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </motion.div>
+                  </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
-            
-            {/* Minimal CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255,255,255,0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              className="ml-4 px-5 py-1.5 bg-white text-black text-sm font-semibold rounded-full transition-all duration-300 hover:bg-white/90"
-            >
-              Join
-            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -157,9 +120,6 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
                     {item.name}
                   </Link>
                 ))}
-                <button className="w-full mt-4 px-6 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300">
-                  Join Mission
-                </button>
               </div>
             </motion.div>
           )}

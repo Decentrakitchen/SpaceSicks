@@ -76,7 +76,7 @@ const AboutChallenge: React.FC = () => {
           className="section-content"
         >
           <p className="text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-light leading-relaxed max-w-4xl mx-auto mb-8">
-            Data from several different <span className="text-nebula-400 font-semibold">space-based exoplanet surveying missions</span> 
+            Data from several different <span className="text-nebula-400 font-semibold">space-based exoplanet surveying missions </span> 
             have enabled discovery of thousands of new planets outside our solar system, but most of these exoplanets were identified manually.
           </p>
           <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">

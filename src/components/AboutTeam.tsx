@@ -1,14 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Users, Building, Target } from 'lucide-react';
-
 
 const AboutTeam: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  // Team member data with image paths
+  const teamMembers = [
+    {
+      name: 'Baiganin Azamat',
+      role: 'ML Expert',
+      description: 'Machine Learning Specialist',
+      image: '/images/team/azamat.jpg', // Add your image to public/images/team/
+      gradient: 'from-blue-400 to-purple-500',
+      delay: 1.2
+    },
+    {
+      name: 'Talgatov Daniyal',
+      role: 'Full-Stack Developer',
+      description: 'Backend & Frontend',
+      image: '/images/team/daniyal.jpg',
+      gradient: 'from-green-400 to-emerald-500',
+      delay: 1.4
+    },
+    {
+      name: 'Baidalin Adilzhan',
+      role: 'ML Expert',
+      description: 'Machine Learning Specialist',
+      image: '/images/team/adilzhan.jpg',
+      gradient: 'from-yellow-400 to-orange-500',
+      delay: 1.6
+    },
+    {
+      name: 'Qurmangali Nurasyl',
+      role: 'Frontend Developer',
+      description: 'UI/UX & Full-Stack',
+      image: '/images/team/nurasyl.jpg',
+      gradient: 'from-purple-400 to-pink-500',
+      delay: 1.8
+    },
+    {
+      name: 'Iman Mustafa',
+      role: 'Astrophysics Expert',
+      description: 'Researcher & Advanced physics',
+      image: '/images/team/mustafa.jpg',
+      gradient: 'from-red-400 to-rose-500',
+      delay: 2.0
+    }
+  ];
 
   return (
     <section className="about-team relative z-10">
@@ -45,7 +87,7 @@ const AboutTeam: React.FC = () => {
         >
           <p className="text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-light leading-relaxed max-w-4xl mx-auto mb-8">
             We are <span className="text-cosmic-400 font-semibold">elite students</span> from 
-            <span className="text-cosmic-400 font-semibold"> NIS KhBN G Almaty</span>, 
+            <span className="text-cosmic-400 font-semibold"> NIS Nauryzbay Almaty</span>, 
             Grade 10, united by our passion for technology and space exploration.
           </p>
           <p className="text-lg md:text-xl lg:text-2xl text-cosmic-300 font-light leading-relaxed max-w-4xl mx-auto mb-8">
@@ -65,63 +107,32 @@ const AboutTeam: React.FC = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 1 }}
-          className="team-members grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-16 max-w-6xl mx-auto"
+          className="team-members grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8 mt-16 max-w-7xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="team-member bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Азамат Байганин</h3>
-            <p className="text-cosmic-300 text-sm">ML Expert</p>
-            <p className="text-cosmic-400 text-xs mt-2">Machine Learning Specialist</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="team-member bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <GraduationCap className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Даниял Талгатов</h3>
-            <p className="text-cosmic-300 text-sm">Full-Stack Developer</p>
-            <p className="text-cosmic-400 text-xs mt-2">Backend & Frontend</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            className="team-member bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Адильжан Байдалин</h3>
-            <p className="text-cosmic-300 text-sm">ML Expert</p>
-            <p className="text-cosmic-400 text-xs mt-2">Machine Learning Specialist</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.8 }}
-            className="team-member bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center"
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Нурасыл Курманкул</h3>
-            <p className="text-cosmic-300 text-sm">Frontend Developer</p>
-            <p className="text-cosmic-400 text-xs mt-2">UI/UX & Full-Stack</p>
-          </motion.div>
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: member.delay }}
+              className="team-member bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:border-white/30 transition-all duration-300 hover:transform hover:scale-105"
+            >
+              <div className={`w-32 h-32 bg-gradient-to-r ${member.gradient} rounded-full overflow-hidden mx-auto mb-4 border-4 border-white/20`}>
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to gradient background if image fails to load
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
+              <p className="text-cosmic-300 text-sm">{member.role}</p>
+              <p className="text-cosmic-400 text-xs mt-2">{member.description}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </section>

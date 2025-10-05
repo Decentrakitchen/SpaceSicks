@@ -43,13 +43,13 @@ const Hero: React.FC = () => {
   });
 
   return (
-    <section className="hero relative z-10 min-h-screen flex items-center justify-center">
+    <section className="hero">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 1 }}
-        className="text-center w-full px-4"
+        className="text-center w-full max-w-7xl mx-auto px-4"
       >
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="hero-subtitle text-xl md:text-2xl lg:text-3xl text-cosmic-200 font-light leading-relaxed max-w-4xl mx-auto"
         >
-          We're engineering <span className="text-nebula-400 font-semibold">next-generation AI systems</span> 
+          We're engineering <span className="text-nebula-400 font-semibold">next-generation AI systems </span> 
           that analyze cosmic data streams, decode planetary signatures, and 
           <span className="text-cosmic-400 font-medium"> expand humanity's reach into the infinite universe</span>.
         </motion.p>
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
           icon={<Rocket className="w-8 h-8" />}
         />
         <DataPoint
-          number="99.7%"
+          number="92%"
           label="AI Accuracy Rate"
           icon={<Zap className="w-8 h-8" />}
         />
