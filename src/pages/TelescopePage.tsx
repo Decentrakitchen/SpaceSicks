@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Zap, Database, Target, Search, Star, BarChart3, Play } from 'lucide-react';
+import { Brain, Zap, Database, Target, Search, Star, BarChart3 } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -47,8 +47,6 @@ const TelescopePage: React.FC = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const [isModelRunning, setIsModelRunning] = useState(false);
 
   return (
     <div className="telescope-page relative z-10 min-h-screen">
@@ -176,22 +174,28 @@ const TelescopePage: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Action Buttons */}
+          {/* Hugging Face Space Embed */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-16 flex flex-col md:flex-row gap-6 justify-center"
+            className="mt-16 max-w-7xl mx-auto"
           >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(139, 92, 246, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsModelRunning(!isModelRunning)}
-              className="px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xl font-bold rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 flex items-center justify-center"
-            >
-              <Play className="w-6 h-6 mr-3" />
-              {isModelRunning ? 'Stop Model' : 'Run Model'}
-            </motion.button>
+            <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-6 overflow-hidden">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Try Our AI Model
+              </h3>
+              <div className="flex justify-center">
+                <iframe
+                  src="https://huggingface.co/spaces/Adilbai/Kepler-automated-detection?embed=true"
+                  width="100%"
+                  height="600"
+                  style={{ border: "none", borderRadius: "12px" }}
+                  allow="camera; microphone"
+                  title="Kepler Automated Detection"
+                ></iframe>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

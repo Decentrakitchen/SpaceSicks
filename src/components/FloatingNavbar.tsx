@@ -27,7 +27,7 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
   ];
 
   return (
-    <div className="fixed top-4 left-0 right-0 z-50 flex justify-center">
+    <div className="sticky top-4 z-50 flex justify-center">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
