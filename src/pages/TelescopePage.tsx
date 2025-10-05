@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Zap, Database, Target, Search, Star, BarChart3, Play, Download, Github } from 'lucide-react';
+import { Brain, Zap, Database, Target, Search, Star, BarChart3, Play } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -22,7 +22,7 @@ const DataPoint: React.FC<DataPointProps> = ({ number, label, icon, description 
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="group bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:border-white/20 transition-all duration-300"
+      className="group bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:border-white/20 transition-all duration-300 h-48 flex flex-col justify-center"
     >
       <div className="flex justify-center mb-4 text-blue-400">
         {icon}
@@ -85,8 +85,8 @@ const TelescopePage: React.FC = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-xl md:text-2xl lg:text-3xl text-gray-200 font-light leading-relaxed max-w-4xl mx-auto mb-12"
           >
-            Our <span className="text-purple-400 font-semibold">advanced AI model</span>
-            powered by Hugging Face processes telescope data to identify exoplanets
+            Our <span className="text-purple-400 font-semibold">trained AI model</span>
+            processes telescope data to predict exoplanets
             through machine learning and deep neural networks.
           </motion.p>
 
@@ -103,7 +103,7 @@ const TelescopePage: React.FC = () => {
               description="Total discoveries"
             />
             <DataPoint
-              number="99.7%"
+              number="92%"
               label="Accuracy Rate"
               icon={<Target className="w-8 h-8" />}
               description="AI detection"
@@ -127,7 +127,7 @@ const TelescopePage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-3xl md:text-5xl font-bold text-center text-white mb-16"
           >
-            <span className="text-purple-400">Hugging Face</span> Model
+            AI <span className="text-purple-400">Model</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -191,24 +191,6 @@ const TelescopePage: React.FC = () => {
             >
               <Play className="w-6 h-6 mr-3" />
               {isModelRunning ? 'Stop Model' : 'Run Model'}
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255,255,255,0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-white/10 border border-white/20 text-white text-xl font-semibold rounded-full hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
-            >
-              <Download className="w-6 h-6 mr-3" />
-              Download Model
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255,255,255,0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-white/10 border border-white/20 text-white text-xl font-semibold rounded-full hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
-            >
-              <Github className="w-6 h-6 mr-3" />
-              View on GitHub
             </motion.button>
           </motion.div>
         </div>
