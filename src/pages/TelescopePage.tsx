@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Zap, Database, Target, Search, Star, BarChart3, Play } from 'lucide-react';
+import { Target, Star, BarChart3 } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -47,8 +47,6 @@ const TelescopePage: React.FC = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const [isModelRunning, setIsModelRunning] = useState(false);
 
   return (
     <div className="telescope-page relative z-10 min-h-screen">
@@ -118,83 +116,6 @@ const TelescopePage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* AI Model Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-bold text-center text-white mb-16"
-          >
-            AI <span className="text-purple-400">Model</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <Brain className="w-8 h-8 text-purple-400 mr-3" />
-                  Model Architecture
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Database className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Deep Neural Network</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Zap className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Transformer-based Architecture</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Search className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Real-time telescope data processing</span>
-                  </div>
-                </div>
-              </div>
-
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center">
-                  <Brain className="w-40 h-40 text-purple-400" />
-                </div>
-                <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-pulse"></div>
-                <div className="absolute inset-4 rounded-full border border-blue-400/20 animate-ping"></div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-16 flex flex-col md:flex-row gap-6 justify-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(139, 92, 246, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsModelRunning(!isModelRunning)}
-              className="px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xl font-bold rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 flex items-center justify-center"
-            >
-              <Play className="w-6 h-6 mr-3" />
-              {isModelRunning ? 'Stop Model' : 'Run Model'}
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
