@@ -10,6 +10,6 @@ Getting it running locally is straightforward: `npm install --legacy-peer-deps` 
 
 What made the hackathon genuinely fun? The mix. Shipping a UI that feels space‑grade, wiring it to live ML so it’s not just slides, iterating tiny details (like stars that twinkle just enough), talking to people and getting “this is sick” in real time — all with not a lot of sleep. 36 hours well spent.
 
-Team (NIS KhBN G Almaty): Adilzhan Baidalin (ML/AI), Azamat Bayganin (ML/AI), Daniyal Talgatov (Backend/Frontend), Nurasyl (Frontend), and Iman Mustafa (research physicist) who kept us anchored to the science.
+Team (NIS  G Almaty): Adilzhan Baidalin (ML/AI), Azamat Bayganin (ML/AI), Daniyal Talgatov (Backend/Frontend), Nurasyl (Frontend), and Iman Mustafa (research physicist) who kept us anchored to the science.
 
 License: MIT (please respect licenses for embedded Spaces and datasets).
