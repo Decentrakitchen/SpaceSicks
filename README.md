@@ -1,39 +1,39 @@
-# SpaceSicks – NASA Space Apps Project
+# SpaceSicks — наш космический шип на NASA Space Apps 🚀
 
-SpaceSicks is a modern web app developed during the NASA Space Apps Challenge, focused on AI/ML-driven exoplanet detection from telescope and satellite data. We combined a high-end cosmic UI with working ML demos embedded via Hugging Face Spaces.
+Привет! Мы — маленькая, но очень заряженная команда, которая собрала этот проект на NASA Space Apps. Без пафоса: любим космос, данные и писать ML так, чтобы он реально работал, а не только на слайдах. Тут вы увидите и аккуратный космический UI, и живые демки моделей — всё по делу.
 
-## Features
+## Что тут вообще есть (и почему это кайф)
 
-- **Cosmic Design**: Dark space-themed UI with animated starfield and nebula effects
-- **Responsive Layout**: Mobile-first design that scales beautifully across devices
-- **Modern Typography**: Clean, impactful text with gradient effects
-- **Interactive Elements**: Hover effects and smooth animations
-- **Component Architecture**: Modular React components for easy maintenance
+- **Космический дизайн**: глубина, туманности, звёзды — всё двигается, но не мешает читать
+- **Адаптив**: с телефона/планшета/десктопа — выглядит ровно и достойно
+- **Градиенты и типографика**: аккуратно, читабельно, не «кислотно»
+- **Анимации**: мягкие появления, не дергают глаз, но создают настроение
+- **Модульная архитектура**: компоненты разбиты так, чтобы не страдать при доработках
 
-## Live ML Demos
+## Live ML (да, прям в браузере)
 - Kepler Exoplanet Detection: `https://huggingface.co/spaces/Adilbai/Kepler-automated-detection`
 - TOI NASA Exoplanets Classification: `https://huggingface.co/spaces/Adilbai/TOI-Nasa-exoplanets-classification`
 
-Note: Some hosts block iframes; we use direct hf.space endpoints to ensure embedding works.
+Note: на некоторых хостингах iframes режутся политиками, поэтому мы используем прямые hf.space домены.
 
-## Sections
+## Разделы сайта
 
-1. **Hero**: Bold cosmic headline with mission statement
-2. **About Team**: Positions team as "explorers of intelligence"
-3. **Telescope**: Kepler AI model demo + metrics
-4. **Satellites**: TOI exoplanet classification demo
-5. **Challenge**: NASA Space Apps challenge brief and context
+1. **Hero** — коротко и по делу
+2. **About Team** — кто мы такие и чем дышим
+3. **Telescope** — демка модели Kepler + метрики
+4. **Satellites** — демка классификации TOI
+5. **Challenge** — зачем это всё и как это связано с NASA Space Apps
 
-## Getting Started
+## Как поднять локально (быстро и без боли)
 
 ```bash
 npm install --legacy-peer-deps
 npm start
 ```
 
-The app will open at `http://localhost:3000`
+Приложение откроется на `http://localhost:3000` (если порт занят — CLI предложит другой).
 
-## Tech Stack
+## Техстек (чтобы было приятно писать и читать)
 
 - React 18 + TypeScript
 - Tailwind CSS
@@ -42,25 +42,27 @@ The app will open at `http://localhost:3000`
 - Lucide Icons
 - Three.js / React Three Fiber (for particles/space)
 
-## ML Work (high level)
+## Что сделали по ML (если по делу)
 
-- Trained ML pipelines for exoplanet signal classification (Kepler/TOI)
-- Dataset exploration, preprocessing, experiments in `multiclass.ipynb` (added via commit e9fce11)
-- Deployed interactive demos on Hugging Face Spaces
+- Подготовили пайплайны для классификации сигналов экзопланет (Kepler/TOI)
+- Исследование и препроцессинг датасетов, эксперименты — в `multiclass.ipynb` (см. коммит `e9fce11`)
+- Доставили интерактивные демки на Hugging Face Spaces — можно «пощупать» модель живьём
+- Наша цель — не только метрики, а чтобы этим было реально удобно пользоваться
 
-## Design Philosophy
+## Дизайн-философия (коротко, по-людски)
 
 - **Visionary**: Bold, ambitious messaging
 - **Scientific**: Grounded in real technology and data
 - **Futuristic**: Clean, minimal aesthetic with cosmic elements
 - **Trustworthy**: Professional presentation for researchers and engineers
 
-## Team / Credits
-Built by a student team (NIS KhBN G Almaty) for NASA Space Apps:
-- Adilzhan Baidalin – ML/AI
-- Azamat Bayganin – ML/AI
-- Daniyal Talgatov – Backend/Frontend
-- Nurasyl – Frontend
+## Команда (люди, которые реально впахивали)
+NIS KhBN G Almaty — NASA Space Apps edition:
+- **Adilzhan Baidalin** — ML/AI (тот самый, кто не спит перед сабмитом)
+- **Azamat Bayganin** — ML/AI (держит метрики в узде)
+- **Daniyal Talgatov** — Backend/Frontend (склеивает всё вместе и деплоит)
+- **Nurasyl** — Frontend (чтобы это выглядело не как pet-проект на коленке)
+- **Iman Mustafa** — research physicist (физика/ресёрч; sanity-check, чтобы мы не «улетели» от науки)
 
 ## License
 MIT (respect embedded Spaces/data licenses when applicable)
