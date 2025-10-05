@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Microscope, Zap, Database, Target, Search, Star, Activity, BarChart3 } from 'lucide-react';
+import { Microscope, Zap, Database, Target, Search, Star, BarChart3 } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -110,22 +110,6 @@ const TelescopePage: React.FC = () => {
       location: 'Highly Elliptical Orbit',
       discoveries: 400,
       status: 'active' as const
-    },
-    {
-      id: 'jwst',
-      name: 'James Webb Space Telescope',
-      type: 'Space-based',
-      location: 'L2 Lagrange Point',
-      discoveries: 50,
-      status: 'active' as const
-    },
-    {
-      id: 'cheops',
-      name: 'CHEOPS',
-      type: 'Space-based',
-      location: 'Sun-synchronous Orbit',
-      discoveries: 30,
-      status: 'active' as const
     }
   ];
 
@@ -180,19 +164,13 @@ const TelescopePage: React.FC = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 1 }}
-            className="data-grid grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16 max-w-6xl mx-auto"
+            className="data-grid grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-16 max-w-5xl mx-auto"
           >
             <DataPoint
               number="5000+"
               label="Exoplanets Found"
               icon={<Star className="w-8 h-8" />}
               description="Total discoveries"
-            />
-            <DataPoint
-              number="15"
-              label="Active Missions"
-              icon={<Activity className="w-8 h-8" />}
-              description="Space telescopes"
             />
             <DataPoint
               number="99.7%"
@@ -222,7 +200,7 @@ const TelescopePage: React.FC = () => {
             Choose Your <span className="text-purple-400">Telescope</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
             {telescopes.map((telescope) => (
               <motion.div
                 key={telescope.id}
