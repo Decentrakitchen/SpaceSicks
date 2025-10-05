@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Brain, Zap, Database, Target, Search, Star, BarChart3, ExternalLink } from 'lucide-react';
+import { Brain, Zap, Database, Target, Search, Star, BarChart3 } from 'lucide-react';
 
 interface DataPointProps {
   number: string;
@@ -88,31 +88,33 @@ const TelescopePage: React.FC = () => {
             through machine learning and deep neural networks.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="data-grid grid grid-cols-3 gap-6 md:gap-8 mt-16 max-w-6xl mx-auto items-stretch"
-          >
-            <DataPoint
-              number="5000+"
-              label="Exoplanets Found"
-              icon={<Star className="w-8 h-8" />}
-              description="Total discoveries"
-            />
-            <DataPoint
-              number="92%"
-              label="Accuracy Rate"
-              icon={<Target className="w-8 h-8" />}
-              description="AI detection"
-            />
-            <DataPoint
-              number="24/7"
-              label="Monitoring"
-              icon={<BarChart3 className="w-8 h-8" />}
-              description="Continuous analysis"
-            />
-          </motion.div>
+          <div className="mt-16 flex justify-center px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl"
+            >
+              <DataPoint
+                number="5000+"
+                label="Exoplanets Found"
+                icon={<Star className="w-8 h-8" />}
+                description="Total discoveries"
+              />
+              <DataPoint
+                number="92%"
+                label="Accuracy Rate"
+                icon={<Target className="w-8 h-8" />}
+                description="AI detection"
+              />
+              <DataPoint
+                number="24/7"
+                label="Monitoring"
+                icon={<BarChart3 className="w-8 h-8" />}
+                description="Continuous analysis"
+              />
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -174,60 +176,45 @@ const TelescopePage: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Hugging Face Space Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-16 max-w-5xl mx-auto"
-          >
-            <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-10">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  Try Our AI Model
-                </h3>
-                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                  Experience our Kepler exoplanet detection model live on Hugging Face. 
-                  Upload telescope data and get instant predictions.
-                </p>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-6">
-                <motion.a
-                  href="https://huggingface.co/spaces/Adilbai/Kepler-automated-detection"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(139, 92, 246, 0.5)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-12 py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-2xl font-bold rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 flex items-center justify-center"
-                >
-                  <ExternalLink className="w-7 h-7 mr-3" />
-                  Open Model on Hugging Face
-                </motion.a>
-                
-                <p className="text-gray-400 text-sm">
-                  Opens in a new tab • Powered by Hugging Face
-                </p>
-              </div>
-
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-                  <div className="text-purple-400 text-2xl font-bold mb-2">Real-time</div>
-                  <div className="text-gray-300 text-sm">Instant predictions</div>
-                </div>
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-                  <div className="text-blue-400 text-2xl font-bold mb-2">Interactive</div>
-                  <div className="text-gray-300 text-sm">Upload your data</div>
-                </div>
-                <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-                  <div className="text-green-400 text-2xl font-bold mb-2">Accurate</div>
-                  <div className="text-gray-300 text-sm">92% accuracy rate</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
+
+      {/* Hugging Face Full-Width Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="w-full py-16 bg-black/30 backdrop-blur-md border-t border-b border-white/10"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-10 px-4"
+        >
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4">
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text animate-pulse">
+              Try Our AI Model
+            </span>
+          </h3>
+          <p className="text-center text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+            Experience our <span className="text-purple-400 font-semibold">Kepler exoplanet detection</span> model live
+          </p>
+        </motion.div>
+        <div className="w-full px-4 md:px-8 lg:px-16">
+          <div className="w-full h-[85vh] max-w-[1800px] mx-auto">
+            <iframe
+              src="https://adilbai-kepler-automated-detection.hf.space"
+              width="100%"
+              height="100%"
+              style={{ border: 'none', borderRadius: '12px' }}
+              title="Kepler Automated Detection"
+              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            ></iframe>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 };
