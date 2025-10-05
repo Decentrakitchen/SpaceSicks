@@ -1,68 +1,15 @@
-# SpaceSicks — наш космический шип на NASA Space Apps 🚀
+# SpaceSicks — the thing we built for NASA Space Apps 🚀
 
-Привет! Мы — маленькая, но очень заряженная команда, которая собрала этот проект на NASA Space Apps. Без пафоса: любим космос, данные и писать ML так, чтобы он реально работал, а не только на слайдах. Тут вы увидите и аккуратный космический UI, и живые демки моделей — всё по делу.
+We’re a small crew that genuinely loves space, data, and shipping ML that actually runs. This is our NASA Space Apps project: a clean, cosmic web app where you can try exoplanet models live, right inside the site. It’s fast, responsive, and feels like a product — not a slide deck that collapses on scroll. Subtle starfields, soft nebula glows, motion that doesn’t shout, and a compact navbar that stays with you — the vibe is NASA‑grade without being loud. Under the hood it’s React 18 + TypeScript, Tailwind CSS, Framer Motion, React Router, Lucide, plus a touch of Three.js / React Three Fiber for a particle field and depth. Most of the story lives in the page flow: you land, you get the point, you try the model — minimal clicks, zero friction.
 
-## Что тут вообще есть (и почему это кайф)
+Live ML (right in the browser): Kepler Exoplanet Detection — `https://huggingface.co/spaces/Adilbai/Kepler-automated-detection` and TOI NASA Exoplanets Classification — `https://huggingface.co/spaces/Adilbai/TOI-Nasa-exoplanets-classification`. If an iframe gets blocked by CSP/X‑Frame‑Options, we fall back to the direct `*.hf.space` endpoints so the demos still run on the page.
 
-- **Космический дизайн**: глубина, туманности, звёзды — всё двигается, но не мешает читать
-- **Адаптив**: с телефона/планшета/десктопа — выглядит ровно и достойно
-- **Градиенты и типографика**: аккуратно, читабельно, не «кислотно»
-- **Анимации**: мягкие появления, не дергают глаз, но создают настроение
-- **Модульная архитектура**: компоненты разбиты так, чтобы не страдать при доработках
+About the NASA datasets and our model — the real talk. We leaned on public exoplanet data (Kepler/TOI and related open sources) to train lightweight classifiers that flag promising candidates. The honest work sits in `multiclass.ipynb` (added in commit e9fce11): exploring signals, cleaning, trying baselines, and settling on something stable enough to demo live. We’re not chasing SOTA here — clarity, reproducibility, and instant interactivity won the day. You upload or poke examples, you see what the model thinks — now, not later.
 
-## Live ML (да, прям в браузере)
-- Kepler Exoplanet Detection: `https://huggingface.co/spaces/Adilbai/Kepler-automated-detection`
-- TOI NASA Exoplanets Classification: `https://huggingface.co/spaces/Adilbai/TOI-Nasa-exoplanets-classification`
+Getting it running locally is straightforward: `npm install --legacy-peer-deps` then `npm start`. It’ll boot on `http://localhost:3000` (CLI offers another port if 3000 is busy). The code is structured to be readable and hackathon‑friendly so you can tweak components, styles, and routes without digging through spaghetti.
 
-Note: на некоторых хостингах iframes режутся политиками, поэтому мы используем прямые hf.space домены.
+What made the hackathon genuinely fun? The mix. Shipping a UI that feels space‑grade, wiring it to live ML so it’s not just slides, iterating tiny details (like stars that twinkle just enough), talking to people and getting “this is sick” in real time — all with not a lot of sleep. 36 hours well spent.
 
-## Разделы сайта
+Team (NIS KhBN G Almaty): Adilzhan Baidalin (ML/AI), Azamat Bayganin (ML/AI), Daniyal Talgatov (Backend/Frontend), Nurasyl (Frontend), and Iman Mustafa (research physicist) who kept us anchored to the science.
 
-1. **Hero** — коротко и по делу
-2. **About Team** — кто мы такие и чем дышим
-3. **Telescope** — демка модели Kepler + метрики
-4. **Satellites** — демка классификации TOI
-5. **Challenge** — зачем это всё и как это связано с NASA Space Apps
-
-## Как поднять локально (быстро и без боли)
-
-```bash
-npm install --legacy-peer-deps
-npm start
-```
-
-Приложение откроется на `http://localhost:3000` (если порт занят — CLI предложит другой).
-
-## Техстек (чтобы было приятно писать и читать)
-
-- React 18 + TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Router
-- Lucide Icons
-- Three.js / React Three Fiber (for particles/space)
-
-## Что сделали по ML (если по делу)
-
-- Подготовили пайплайны для классификации сигналов экзопланет (Kepler/TOI)
-- Исследование и препроцессинг датасетов, эксперименты — в `multiclass.ipynb` (см. коммит `e9fce11`)
-- Доставили интерактивные демки на Hugging Face Spaces — можно «пощупать» модель живьём
-- Наша цель — не только метрики, а чтобы этим было реально удобно пользоваться
-
-## Дизайн-философия (коротко, по-людски)
-
-- **Visionary**: Bold, ambitious messaging
-- **Scientific**: Grounded in real technology and data
-- **Futuristic**: Clean, minimal aesthetic with cosmic elements
-- **Trustworthy**: Professional presentation for researchers and engineers
-
-## Команда (люди, которые реально впахивали)
-NIS KhBN G Almaty — NASA Space Apps edition:
-- **Adilzhan Baidalin** — ML/AI (тот самый, кто не спит перед сабмитом)
-- **Azamat Bayganin** — ML/AI (держит метрики в узде)
-- **Daniyal Talgatov** — Backend/Frontend (склеивает всё вместе и деплоит)
-- **Nurasyl** — Frontend (чтобы это выглядело не как pet-проект на коленке)
-- **Iman Mustafa** — research physicist (физика/ресёрч; sanity-check, чтобы мы не «улетели» от науки)
-
-## License
-MIT (respect embedded Spaces/data licenses when applicable)
+License: MIT (please respect licenses for embedded Spaces and datasets).
