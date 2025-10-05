@@ -27,15 +27,15 @@ const FloatingNavbar: React.FC<FloatingNavbarProps> = ({ className = '' }) => {
   ];
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full pointer-events-none flex justify-center">
+    <div className="sticky top-4 z-50 flex justify-center">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`pointer-events-auto transition-all duration-500 max-w-4xl w-[90%] ${
+        className={`transition-all duration-500 ${
           isScrolled 
-            ? 'bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-blue-500/10 scale-[0.98]' 
-            : 'bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg shadow-blue-500/5 scale-100'
+            ? 'bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-blue-500/10' 
+            : 'bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg shadow-blue-500/5'
         } ${className}`}
       >
         
